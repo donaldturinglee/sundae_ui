@@ -1,0 +1,122 @@
+@import "variables";
+@import "mixin";
+@import "theme";
+
+// Background Color
+@include generate-default-colors;
+@include generate-color-classes(slate);
+@include generate-color-classes(gray);
+@include generate-color-classes(zinc);
+@include generate-color-classes(neutral);
+@include generate-color-classes(stone);
+@include generate-color-classes(red);
+@include generate-color-classes(orange);
+@include generate-color-classes(amber);
+@include generate-color-classes(yellow);
+@include generate-color-classes(lime);
+@include generate-color-classes(green);
+@include generate-color-classes(emerald);
+@include generate-color-classes(teal);
+@include generate-color-classes(cyan);
+@include generate-color-classes(sky);
+@include generate-color-classes(blue);
+@include generate-color-classes(indigo);
+@include generate-color-classes(violet);
+@include generate-color-classes(purple);
+@include generate-color-classes(fuchsia);
+@include generate-color-classes(pink);
+@include generate-color-classes(rose);
+
+// Text Colors
+
+
+// Border
+
+//.border-xs {
+//  @include border-width($border-xs, $badge-neutral-background);
+//}
+//
+//.border-sm {
+//  @include border-width($border-sm, $badge-neutral-background);
+//}
+//
+//.border-md {
+//  @include border-width($border-md, $badge-neutral-background);
+//}
+//
+//.border-lg {
+//  @include border-width($border-lg, $badge-neutral-background);
+//}
+//
+//.border-xl {
+//  @include border-width($border-xl, $badge-neutral-background);
+//}
+//
+//.border-xxl {
+//  @include border-width($border-xxl, $badge-neutral-background);
+//}
+
+
+@each $size in none, xs, sm, md, lg, xl, 2xl {
+  .rounded-#{$size} {
+    @include border-radius($size)
+  }
+}
+
+.border-radius-xs {
+  @include border-radius($border-radius-xs);
+}
+
+.border-radius-sm {
+  @include border-radius($border-radius-sm);
+}
+
+.border-radius-md {
+  @include border-radius($border-radius-md);
+}
+
+.border-radius-lg {
+  @include border-radius($border-radius-lg);
+}
+
+.border-radius-xl {
+  @include border-radius($border-radius-xl);
+}
+
+.border-radius-2xl {
+  @include border-radius($border-radius-2xl);
+}
+
+// Font
+
+@each $size in xs, sm, md, lg, xl, 2xl {
+  .text-#{$size} {
+    @include text-size($size);
+  }
+}
+
+@each $weight in thin, light, normal, medium, semibold, bold {
+  .font-#{$weight} {
+    @include font-weight($weight);
+  }
+}
+
+@each $style in normal, italic {
+  .font-#{$style} {
+    @include font-style($style);
+  }
+}
+
+@each $leading in none, tight, snug, normal, relaxed, loose {
+  .leading-#{$leading} {
+    @include line-height($leading);
+  }
+}
+
+// Shadow
+
+@each $size in none, xs, sm, md, lg, xl, 2xl, inner {
+  .shadow-#{$size} {
+    @include box-shadow($size);
+  }
+}

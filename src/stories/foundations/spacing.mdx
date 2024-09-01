@@ -1,0 +1,48 @@
+import { Meta, Unstyled } from '@storybook/blocks';
+
+<Meta title="Foundations/Spacing" />
+
+# Spacing
+
+## Introduction
+TODO
+
+<Unstyled>
+    <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+        <thead>
+        <tr>
+            <th style={{ padding: '8px', borderBottom: '1px solid #ccc' }}>Name</th>
+            <th style={{ padding: '8px', borderBottom: '1px solid #ccc' }}>Size</th>
+            <th style={{ padding: '8px', borderBottom: '1px solid #ccc' }}>Pixels</th>
+            <th style={{ padding: '8px', borderBottom: '1px solid #ccc' }}>Preview</th>
+        </tr>
+        </thead>
+        <tbody>
+        {[
+            { name: '0', size: '0px', pixels: '0px' },
+            { name: 'px', size: '1px', pixels: '1px' },
+            { name: '0.5', size: '0.125rem', pixels: '2px' },
+            { name: '1', size: '0.25rem', pixels: '4px' },
+            { name: '1.5', size: '0.375rem', pixels: '6px' },
+            { name: '2', size: '0.5rem', pixels: '8px' },
+            { name: '2.5', size: '0.625rem', pixels: '10px' },
+            { name: '3', size: '0.75rem', pixels: '12px' },
+            { name: '3.5', size: '0.875rem', pixels: '14px' },
+            { name: '4', size: '1rem', pixels: '16px' },
+            { name: '5', size: '1.25rem', pixels: '20px' },
+            { name: '6', size: '1.5rem', pixels: '24px' },
+            { name: '7', size: '1.75rem', pixels: '28px' },
+            { name: '8', size: '2rem', pixels: '32px' },
+        ].map(({ name, size, pixels }) => (
+            <tr key={name}>
+                <td style={{ padding: '8px', borderBottom: '1px solid #ccc' }}>{name}</td>
+                <td style={{ padding: '8px', borderBottom: '1px solid #ccc' }}>{size}</td>
+                <td style={{ padding: '8px', borderBottom: '1px solid #ccc' }}>{pixels}</td>
+                <td style={{ padding: '8px', borderBottom: '1px solid #ccc' }}>
+                    <div style={{ width: pixels, height: '10px', backgroundColor: '#2563EB' }} />
+                </td>
+            </tr>
+        ))}
+        </tbody>
+    </table>
+</Unstyled>

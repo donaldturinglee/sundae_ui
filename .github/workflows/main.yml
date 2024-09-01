@@ -1,0 +1,34 @@
+name: Build and Publish Storybook to GitHub Pages
+
+on:
+  push:
+    paths:
+      - src/stories/**
+      - src/components/**/*.stories.tsx
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Store update time
+        run: echo "UPDATE_AT=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+
+      - name: Build
+        run: | 
+          npm install
+          npm run build:docs
+
+      - name: Publish
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: main
+          folder: docs
+          target-folder: docs
+          clean: true
+          commit-message: "docs: Update storybook at ${{ env.UPDATE_AT }}"
